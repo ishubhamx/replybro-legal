@@ -75,7 +75,7 @@
 
 <header>
   <h1>Privacy Policy</h1>
-  <p>ReplyBro &nbsp;·&nbsp; Last updated: May 22, 2026</p>
+  <p>ReplyBro &nbsp;·&nbsp; Last updated: May 23, 2026</p>
 </header>
 
 <main>
@@ -99,14 +99,18 @@
     <p>
       ReplyBro uses Android's
       <strong>Notification Listener Service</strong> to read incoming notifications
-      from WhatsApp so it can send automated replies on your behalf.
+      from supported messaging apps — currently <strong>WhatsApp, WhatsApp Business,
+      Telegram, Instagram, and Facebook Messenger</strong> — so it can send automated
+      replies on your behalf.
     </p>
     <ul>
       <li>
         <span class="badge">On device only</span>
-        <strong>Notification content</strong> (sender name, message text) — read
-        in memory to match your rules and compose a reply. Never stored beyond the
-        moment the reply is sent, except in the in-app reply log visible to you.
+        <strong>Notification content</strong> (sender name, message text from
+        supported apps: WhatsApp, WhatsApp Business, Telegram, Instagram, and
+        Facebook Messenger) — read in memory to match your rules and compose a reply.
+        Never stored beyond the moment the reply is sent, except in the in-app reply
+        log visible to you.
       </li>
       <li>
         <span class="badge">On device only</span>
@@ -152,9 +156,17 @@
     <br/><a href="https://policies.google.com/technologies/ads" target="_blank">Google Ads Privacy Policy →</a></p>
 
     <p><strong>Google Play Billing (Google)</strong><br/>
-    In-app purchases (monthly, yearly, lifetime plans) are processed entirely by
+    In-app purchases (weekly, monthly, and yearly plans) are processed entirely by
     Google Play. We never see or store your payment information.
     <br/><a href="https://payments.google.com/payments/apis-secure/get_legal_document?ldo=0&ldt=privacynotice" target="_blank">Google Play Payments Privacy →</a></p>
+
+    <p><strong>Firebase Cloud Messaging (Google)</strong><br/>
+    We may send you push notifications via FCM — for example, to remind you to
+    claim your daily diamond reward or to announce new features. FCM assigns
+    your device a registration token. We do not store individual tokens on our
+    servers; notifications are delivered via topic-based broadcasts. You can
+    disable notifications at any time in your device's app notification settings.
+    <br/><a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Privacy Policy →</a></p>
   </div>
 
   <div class="card">
@@ -162,13 +174,15 @@
     <ul>
       <li>
         <strong>Notification access (NotificationListenerService)</strong> —
-        Required to read incoming WhatsApp notifications and send replies via
+        Required to read incoming notifications from WhatsApp, WhatsApp Business,
+        Telegram, Instagram, and Facebook Messenger, and to send replies via
         RemoteInput. You grant this explicitly in Android Settings. You can
         revoke it at any time; the app will stop working but your data is unaffected.
       </li>
       <li>
         <strong>POST_NOTIFICATIONS</strong> —
-        Used to show you status notifications (e.g. "reply sent", "service running").
+        Used to show you status notifications (e.g. "reply sent", "service running",
+        daily diamond reminders, and updates).
       </li>
       <li>
         <strong>FOREGROUND_SERVICE / FOREGROUND_SERVICE_SPECIAL_USE</strong> —
@@ -176,14 +190,24 @@
         No extra data collection occurs.
       </li>
       <li>
-        <strong>RECEIVE_BOOT_COMPLETED</strong> —
-        Allows the service to restart automatically after a reboot, so replies
-        continue working.
+        <strong>REQUEST_IGNORE_BATTERY_OPTIMIZATIONS</strong> —
+        Lets you exempt ReplyBro from battery optimisation so the listener keeps
+        running. You choose whether to grant this; replies still work without it,
+        but may be delayed when the device is idle.
       </li>
       <li>
-        <strong>INTERNET</strong> —
-        Used only by Firebase (analytics, crash reporting) and AdMob. Not used
-        to upload your messages or rules.
+        <strong>ACCESS_NOTIFICATION_POLICY</strong> —
+        Lets ReplyBro detect whether your phone is in Do-Not-Disturb mode so it can
+        skip replies when you've asked the device to stay silent.
+      </li>
+      <li>
+        <strong>INTERNET / ACCESS_NETWORK_STATE</strong> —
+        Used only by Firebase (analytics, crash reporting, cloud messaging) and
+        AdMob. Not used to upload your messages or rules.
+      </li>
+      <li>
+        <strong>BILLING</strong> —
+        Required for Google Play in-app subscription purchases.
       </li>
     </ul>
   </div>
@@ -202,7 +226,55 @@
   </div>
 
   <div class="card">
-    <h2>5. Children's Privacy</h2>
+    <h2>5. Sensitive Information We Do Not Collect</h2>
+    <p>
+      ReplyBro does not request, collect, or transmit sensitive personal
+      information such as your real name, phone number, email address,
+      precise location, contacts list, photos, financial details, health
+      data, religious or political opinions, or biometric identifiers.
+      Notification content is processed in memory on your device only and
+      is never uploaded.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>6. Disclosure of Personal Information</h2>
+    <p>
+      We do not sell, trade, rent, or otherwise transfer your personal
+      information to outside parties. The only data that leaves your
+      device is the anonymous, aggregated telemetry described in
+      Section 2, sent directly to the respective third-party services
+      (Google/Firebase, AdMob) under their own privacy policies.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>7. Interest-Based Advertising</h2>
+    <p>
+      Free-tier users may see ads served by Google AdMob. Google may use
+      your device's Advertising ID to personalise these ads. You can
+      reset your Advertising ID or opt out of interest-based ads at any
+      time:
+    </p>
+    <ul>
+      <li><strong>Android:</strong> Settings → Google → Ads → "Delete advertising ID" / "Opt out of Ads Personalisation".</li>
+      <li><strong>Google account-wide:</strong>
+        <a href="https://adssettings.google.com" target="_blank">adssettings.google.com</a>
+      </li>
+      <li><strong>Industry-wide opt-out:</strong>
+        <a href="https://www.aboutads.info/choices/" target="_blank">aboutads.info/choices</a> and
+        <a href="https://youradchoices.com" target="_blank">youradchoices.com</a>
+      </li>
+    </ul>
+    <p>
+      In regions covered by GDPR or CCPA, the Google User Messaging
+      Platform (UMP) consent form is shown on first launch so you can
+      choose between personalised and non-personalised ads.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>8. Children's Privacy</h2>
     <p>
       ReplyBro is not directed at children under 13. We do not knowingly collect
       personal information from children. If you believe a child has provided
@@ -211,7 +283,7 @@
   </div>
 
   <div class="card">
-    <h2>6. Changes to This Policy</h2>
+    <h2>9. Changes to This Policy</h2>
     <p>
       We may update this policy as the app evolves. The "last updated" date at
       the top of this page reflects the most recent revision. Continued use of
@@ -220,7 +292,7 @@
   </div>
 
   <div class="card">
-    <h2>7. Contact Us</h2>
+    <h2>10. Contact Us</h2>
     <p>
       Questions about this policy?<br/>
       Email: <a href="mailto:ishubhamx0@gmail.com">ishubhamx0@gmail.com</a>
